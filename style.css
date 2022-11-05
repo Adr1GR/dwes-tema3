@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(215, 236, 255);
+}
+
+.bienvenidaTitulo {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10%;
+    background-color: white;
+}
