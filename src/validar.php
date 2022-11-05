@@ -2,8 +2,14 @@
 
 function validarFichero ($nombre, $fichero)
 {
-    return false;
+    $resultado = true;
+    $errores = [];
+
+    $errores[0] = "ERROR_CODE_OK";
+
+    return [$resultado, $errores];
 }
+
 
 
 /* 
