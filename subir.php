@@ -69,9 +69,16 @@ require './src/languagesErros.php';
             </p>
             <p>
                 <?php
-                    if ($_POST) {
-                        if ($r[0] && $r[1][0] == "ERROR_CODE_OK") { echo getCadenaError('ERROR_CODE_OK'); }
+                if ($_POST) {
+                    if ($r[0] && in_array("ERROR_CODE_OK", $r[1])) {
+                        subirFichero($_POST['nombre_fichero'], $_FILES['fichero_a_subir']);
+                        echo "<p class='uploaded'>". getCadenaError('ERROR_CODE_OK') . "<p>";
+                    } else {
+                        foreach($r[1] as $e) {
+                            echo "<p class='error'>". getCadenaError($e) . "<p>";
+                        }
                     }
+                }
                 ?>
             </p>
         </form>

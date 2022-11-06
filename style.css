@@ -9,3 +9,11 @@ body {
     margin-top: 10%;
     background-color: white;
 }
+
+.error {
+    color: red;
+}
+
+.uploaded {
+    color: green;
+}

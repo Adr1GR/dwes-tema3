@@ -7,9 +7,21 @@ if ($_GET && isset($_GET['idioma'])) {
 }
 
 $cadenasError = [
+    'ERROR_CODE_NULL' => [
+        'es' => 'Seleccione un fichero',
+        'en' => 'Select a file'
+    ],
     'ERROR_CODE_OK' => [
         'es' => 'Fichero subido correctamente',
         'en' => 'File uploaded successfully'
+    ],
+    'ERROR_CODE_MIME' => [
+        'es' => 'Extensión de fichero no válida',
+        'en' => 'Invalid file extension'
+    ],
+    'ERROR_CODE_FAIL' => [
+        'es' => 'Fallo al subir el archivo',
+        'en' => 'Failed to upload file'
     ]
 ];
 
