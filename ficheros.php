@@ -49,39 +49,33 @@ require './src/listarFicheros.php'
     </nav>
     <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
         <h1 class="display-4 mt-5"><b>TUS FICHEROS</b></h1>
-        <table class="table mt-5">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-            <?= $r = listarFicheros() ?>
-            <?= $r("nombres")[0]; ?>                     
-        </table>
+        <?php $r = listarFicherosPDF() ?>
+        <div class="list-group mt-5">
+            <?php
+            if ($r[0] == null) {
+                
+            } else {
+                for ($i = 0; $i < count($r[0]); $i++) {
+                    echo "<a href='" . $r[0][$i] . "' class='list-group-item list-group-item-action'>" . $r[0][$i] . "</a>";
+                }
+            } ?>
+        </div>
     </div>
+    <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
+        <h1 class="display-4 mt-5"><b>TUS IMAGENES</b></h1>
+        <?php $r = listarFicherosPDF() ?>
+        <div class="list-group mt-5">
+            <?php
+            if ($r[1] == null) {
+                
+            } else {
+                for ($i = 0; $i < count($r[1]); $i++) {
+                    echo "<a href='" . $r[1][$i] . "' class='list-group-item list-group-item-action'>" . $r[1][$i] . "</a>";
+                }
+            } ?>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
