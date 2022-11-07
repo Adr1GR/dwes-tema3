@@ -50,27 +50,26 @@ require './src/listarFicheros.php'
     <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
         <h1 class="display-4 mt-5"><b>TUS FICHEROS</b></h1>
         <?php $r = listarFicherosPDF() ?>
-        <div class="list-group mt-5">
+        <ul class="list-group mt-5 mb-5">
             <?php
-            if ($r[0] == null) {
-                
+            if ($r["pdf"] == null) {
+                echo "Sin ficheros";
             } else {
-                for ($i = 0; $i < count($r[0]); $i++) {
-                    echo "<a href='" . $r[0][$i] . "' class='list-group-item list-group-item-action'>" . $r[0][$i] . "</a>";
+                for ($i = 0; $i < count($r["pdf"]); $i++) {
+                    echo " <li class='list-group-item'><div><p class='float-left'>" . $r["pdf"][$i] . "</p><button type='button' class='btn btn-danger float-right'>Eliminar</button><button type='button' class='btn btn-primary float-right'>Abrir</button>" . "</div></li>";
                 }
             } ?>
-        </div>
+        </ul>
     </div>
     <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
         <h1 class="display-4 mt-5"><b>TUS IMAGENES</b></h1>
-        <?php $r = listarFicherosPDF() ?>
         <div class="list-group mt-5">
             <?php
-            if ($r[1] == null) {
-                
+            if ($r["img"] == null) {
+                echo "Sin imágenes";
             } else {
-                for ($i = 0; $i < count($r[1]); $i++) {
-                    echo "<a href='" . $r[1][$i] . "' class='list-group-item list-group-item-action'>" . $r[1][$i] . "</a>";
+                for ($i = 0; $i < count($r["img"]); $i++) {
+                    echo "<a href='" . $r["img"][$i] . "' class='list-group-item list-group-item-action'>" . $r["img"][$i] . "</a>";
                 }
             } ?>
         </div>

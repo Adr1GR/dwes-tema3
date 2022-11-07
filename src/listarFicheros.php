@@ -15,7 +15,10 @@ function listarFicherosPDF()
             }
         }
     }
-    return [$ficherosPdf, $ficherosImg];
+    return [
+        "pdf" => $ficherosPdf,
+        "img" => $ficherosImg
+    ];
 }
 
 
