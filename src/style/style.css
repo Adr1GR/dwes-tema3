@@ -2,11 +2,19 @@ body {
     background-color: rgb(215, 236, 255);
 }
 
-.bienvenidaTitulo {
+.divCentral {
     text-align: center;
     margin: 0 auto;
     position: relative;
     margin-top: 10%;
+    background-color: white;
+}
+
+.divCentralFicheros {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 5%;
     background-color: white;
 }
 

@@ -26,6 +26,6 @@ function validarFichero($nombre, $fichero)
 function subirFichero($nombre, $fichero)
 {
     $fichero["name"] = $nombre;
-    $rutaFicheroDestino = './ficheros/' . basename($fichero["name"]);
+    $rutaFicheroDestino = './files/' . basename($fichero["name"]);
     move_uploaded_file($fichero["tmp_name"], $rutaFicheroDestino);
 }

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <?php
-require './src/languages.php';
+require './src/languages/languages.php';
 ?>
 
 <head>
@@ -11,7 +11,7 @@ require './src/languages.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>MiniMyCloud</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/style/style.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@ require './src/languages.php';
             </form>
         </div>
     </nav>
-    <div class="bienvenidaTitulo shadow p-3 mb-5 bg-body rounded w-75 p-3">
+    <div class="divCentral shadow p-3 mb-5 bg-body rounded w-75 p-3">
         <h1 class="display-1 mt-5"><b><?= getCadena('bienvenidaTitulo') ?></b></h1>
         <h3 class="display-5 mt-5"><?= getCadena('bienvenidaDescripcion') ?></h3>
         <a href="./subir.php?idioma=<?= $idioma ?>" class="btn btn-primary mt-5 mb-5" role="button"><?= getCadena('bienvenidaBoton') ?></a>

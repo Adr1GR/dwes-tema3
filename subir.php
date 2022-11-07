@@ -2,9 +2,9 @@
 <html lang="es">
 
 <?php
-require './src/languages.php';
+require './src/languages/languages.php';
+require './src/languages/languagesErros.php';
 require './src/validar.php';
-require './src/languagesErros.php';
 ?>
 
 <head>
@@ -13,7 +13,7 @@ require './src/languagesErros.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>MiniMyCloud</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/style/style.css">
 </head>
 
 <body>
@@ -48,14 +48,9 @@ require './src/languagesErros.php';
             </form>
         </div>
     </nav>
-    <div class="bienvenidaTitulo shadow p-3 mb-5 bg-body rounded w-75 p-3">
+    <div class="divCentral shadow p-3 mb-5 bg-body rounded w-75 p-3">
         <h1 class="display-4 mt-5"><b><?= getCadena('subirTitulo') ?></b></h1>
         <form action="#" method="POST" enctype="multipart/form-data">
-            <?php
-            if ($_POST) {
-                $r = validarFichero($_POST['nombre_fichero'], $_FILES['fichero_a_subir']);
-            }
-            ?>
             <p>
                 <label for="nombre_fichero">Nombre fichero:</label>
                 <input type="text" name="nombre_fichero" id="nombre_fichero">
@@ -70,6 +65,7 @@ require './src/languagesErros.php';
             <p>
                 <?php
                 if ($_POST) {
+                    $r = validarFichero($_POST['nombre_fichero'], $_FILES['fichero_a_subir']);
                     if ($r[0] && in_array("ERROR_CODE_OK", $r[1])) {
                         subirFichero($_POST['nombre_fichero'], $_FILES['fichero_a_subir']);
                         echo "<p class='uploaded'>". getCadenaError('ERROR_CODE_OK') . "<p>";
