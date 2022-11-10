@@ -25,3 +25,17 @@ body {
 .uploaded {
     color: green;
 }
+
+.ficheros_imagenes {
+    display: flex;
+    grid-gap: 4px;
+    grid-template-columns: repeat(6, auto);
+}
+
+.ficheros_imagenes_img {
+    object-fit: cover;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+}
+

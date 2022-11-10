@@ -46,6 +46,34 @@ $cadenas = [
     'seleccionarFichero' => [
         'es' => '<b>Selecciona un fichero</b>',
         'en' => '<b>Select a file</b>'
+    ],
+    'enviarFichero' => [
+        'es' => 'Enviar fichero',
+        'en' => 'Upload file'
+    ],
+    'tusFicheros' => [
+        'es' => 'TUS FICHEROS',
+        'en' => 'YOUR FILES'
+    ],
+    'sinFicheros' => [
+        'es' => 'Sin ficheros',
+        'en' => 'No files'
+    ],
+    'tusImagenes' => [
+        'es' => 'TUS IMÁGENES',
+        'en' => 'YOUR IMAGES'
+    ],
+    'sinImagenes' => [
+        'es' => 'Sin imágenes',
+        'en' => 'No images'
+    ],
+    'abrirFichero' => [
+        'es' => 'Abrir',
+        'en' => 'Open'
+    ],
+    'eliminarFichero' => [
+        'es' => 'Eliminar',
+        'en' => 'Delete'
     ]
 ];
 

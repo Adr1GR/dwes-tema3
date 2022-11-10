@@ -1,5 +1,6 @@
 <?php
 
+//Listar ficheros
 function listarFicherosPDF()
 {
     $todosFicheros = scandir('./files');
@@ -21,4 +22,9 @@ function listarFicherosPDF()
     ];
 }
 
-
+//Nombres simples para los ficheros
+function nombreSimple($nombreLargo){
+    $tmp = explode("/", $nombreLargo);
+    $nombreSimple = end($tmp);
+    return $nombreSimple;       
+}

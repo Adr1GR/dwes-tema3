@@ -52,15 +52,15 @@ require './src/validar.php';
         <h1 class="display-4 mt-5"><b><?= getCadena('subirTitulo') ?></b></h1>
         <form action="#" method="POST" enctype="multipart/form-data">
             <p>
-                <label for="nombre_fichero">Nombre fichero:</label>
+                <label for="nombre_fichero"><?= getCadena('nombreFichero') ?></label>
                 <input type="text" name="nombre_fichero" id="nombre_fichero">
             </p>
             <p>
-                <label for="fichero_a_subir">Seleccion un fichero:</label>
+                <label for="fichero_a_subir"><?= getCadena('seleccionarFichero') ?></label>
                 <input type="file" name="fichero_a_subir" id="fichero_a_subir">
             </p>
             <p>
-                <input type="submit" value="Enviar fichero">
+                <input type="submit" value="<?= getCadena("enviarFichero")?>">
             </p>
             <p>
                 <?php

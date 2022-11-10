@@ -48,29 +48,44 @@ require './src/listarFicheros.php'
         </div>
     </nav>
     <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
-        <h1 class="display-4 mt-5"><b>TUS FICHEROS</b></h1>
+        <h1 class="display-4 mt-5"><b><?= getCadena("tusFicheros") ?></b></h1>
         <?php $r = listarFicherosPDF() ?>
         <ul class="list-group mt-5 mb-5">
             <?php
             if ($r["pdf"] == null) {
-                echo "Sin ficheros";
+                echo getCadena("sinFicheros");
             } else {
                 for ($i = 0; $i < count($r["pdf"]); $i++) {
-                    echo " <li class='list-group-item'><div><p class='float-left'>" . $r["pdf"][$i] . "</p><button type='button' class='btn btn-danger float-right'>Eliminar</button><button type='button' class='btn btn-primary float-right'>Abrir</button>" . "</div></li>";
+                    $n = nombreSimple($r["pdf"][$i]);
+            ?>
+                    <li class='list-group-item'>
+                        <div>
+                            <p class='float-left'> <?= $n ?> </p>
+                            <button type='button' class='btn btn-primary float-right' onclick="location.href='<?= $r["pdf"][$i] ?>'"> <?php echo getCadena("abrirFichero"); ?> </button>
+                        </div>
+                    </li>
+            <?php
                 }
             } ?>
         </ul>
     </div>
     <div class="divCentralFicheros shadow p-3 mb-5 bg-body rounded w-75 p-3">
-        <h1 class="display-4 mt-5"><b>TUS IMAGENES</b></h1>
-        <div class="list-group mt-5">
+        <h1 class="display-4 mt-5"><b><?= getCadena("tusImagenes") ?></b></h1>
+        <div class="mt-5 mb-5">
             <?php
             if ($r["img"] == null) {
-                echo "Sin imágenes";
+                echo getCadena("sinImagenes");
             } else {
+                echo ("<div class='ficheros_imagenes'>");
                 for ($i = 0; $i < count($r["img"]); $i++) {
-                    echo "<a href='" . $r["img"][$i] . "' class='list-group-item list-group-item-action'>" . $r["img"][$i] . "</a>";
+            ?>
+                    <div>
+                        <img class="ficheros_imagenes_img" src="<?= $r["img"][$i] ?>" alt="">
+                        <button type='button' class='btn btn-primary float-center mt-1' onclick="location.href='<?= $r["img"][$i] ?>'"> <?php echo getCadena("abrirFichero"); ?> </button>
+                    </div>
+            <?php
                 }
+                echo ("</div>");
             } ?>
         </div>
     </div>
